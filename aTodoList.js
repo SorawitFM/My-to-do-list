@@ -1,5 +1,10 @@
 document.getElementById('clickforAdd').addEventListener('click', addList)
 
+function handleEnter(event) {
+    if (event.key === 'Enter') {
+        addList()
+    }
+}
 
 
 function addList() {
