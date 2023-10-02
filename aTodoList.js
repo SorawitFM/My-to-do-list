@@ -12,9 +12,8 @@ function addList() {
         var unOrderList = document.getElementById('list-container')
         var btnSubtract = document.createElement('button')
         list.appendChild(input)
+        list.appendChild(btnSubtract)
         unOrderList.appendChild(list)
-        unOrderList.appendChild(btnSubtract)
         myInput.value = ""
     }
-
 }
