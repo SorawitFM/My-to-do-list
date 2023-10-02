@@ -11,9 +11,14 @@ function addList() {
         var list = document.createElement('li')
         var unOrderList = document.getElementById('list-container')
         var btnSubtract = document.createElement('button')
+        btnSubtract.innerHTML = '\u2716'
         list.appendChild(input)
         list.appendChild(btnSubtract)
         unOrderList.appendChild(list)
         myInput.value = ""
+    }
+    btnSubtract.addEventListener('click', removeList)
+    function removeList() {
+        list.remove()
     }
 }
