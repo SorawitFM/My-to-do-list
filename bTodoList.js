@@ -18,6 +18,7 @@ function addList() {
         var input = document.createTextNode(inputText)
         var removeButton = document.createElement('button')
         removeButton.innerHTML = '\u2716'
+        localStorage.setItem("myList", inputText)
         listItem.appendChild(input)
         listItem.appendChild(removeButton)
         listContainer.appendChild(listItem)
