@@ -19,19 +19,24 @@ function addList() {
         var removeButton = document.createElement('button')
         removeButton.innerHTML = '\u2716'
 
-
-        localStorage.setItem("myList", inputText)
-
-
-
         listItem.appendChild(input)
         listItem.appendChild(removeButton)
         listContainer.appendChild(listItem)
         myInput.value = ""
+
+        var ListInStorage = localStorage.getItem('List') || ''
+        ListInStorage += inputText + '\n'
+        localStorage.setItem('List', ListInStorage)
+        removeButton.addEventListener('click', removeList)
     }
 
-    removeButton.addEventListener('click', removeList)
+
     function removeList() {
+        var listItem = this.parentNode
+        var inputText = listItem.firstChild.textContent
+        var ListInStorage = localStorage.getItem('List') || ''
+        ListInStorage = ListInStorage.replace(inputText + '\n', '')
+        localStorage.setItem('List', ListInStorage)
         listItem.remove()
     }
 }
