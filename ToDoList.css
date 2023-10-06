@@ -43,14 +43,17 @@ body {
     display: block;
     justify-content: center;
     list-style-type: none;
-
+    /* background-color: aqua; */
 }
 
 #list-container>li {
     display: flex;
     justify-content: space-between;
+    margin-left: -1rem;
     margin-right: 2.5rem;
     margin-top: 0.3rem;
-    padding: 0.2rem;
+    padding: 0;
     text-align: left;
+    /* background-color: greenyellow; */
+    width: 100%;
 }
