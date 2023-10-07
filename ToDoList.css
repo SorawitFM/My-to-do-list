@@ -1,59 +1,132 @@
-ิ* {
-    margin: 0 auto;
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-    background-color: black;
+    font-family: Arial, sans-serif;
+    background-color: #a4d3e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        flex-direction: column-reverse;
+        margin-top: 3rem;
+        background-image: url(https://images.unsplash.com/photo-1601342630314-8427c38bf5e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1891&q=80);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .working-pic {
+        display: none;
+    }
+
+
+}
+
+.left {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .working-pic {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px 0 0 5px;
-
-}
-
-.mytodoList {
-    width: 50%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 .right {
-    background-color: rgb(184, 210, 225);
-    border-radius: 0 5px 5px 0;
-    padding: 1rem;
+    flex: 1;
+    background-color: #ffffff85;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.head {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .myInput-container {
     display: flex;
     justify-content: center;
-    gap: 3px;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 0.2rem;
 }
 
-#addList {
-    padding: 0;
-    margin: 0;
+.mytodoList {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#clickforAdd {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#list-container {
-    display: block;
-    justify-content: center;
-    list-style-type: none;
-    /* background-color: aqua; */
+#clickforAdd:hover {
+    background-color: #0056b3;
 }
 
-#list-container>li {
+.todos {
+    text-align: left;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    margin-left: -1rem;
-    margin-right: 2.5rem;
-    margin-top: 0.3rem;
-    padding: 0;
-    text-align: left;
-    /* background-color: greenyellow; */
-    width: 100%;
+    align-items: center;
+}
+
+li button {
+    background-color: #ff5252;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+li button:hover {
+    background-color: #ff0000;
 }
